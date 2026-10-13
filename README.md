@@ -20,22 +20,18 @@ An AI job-search command center that runs inside [Claude Code](https://docs.anth
 
 You need: [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [Git](https://git-scm.com), [Node.js](https://nodejs.org) 18+, [Python](https://www.python.org) 3.10+, and Microsoft Word (Windows or Mac) for pixel-identical PDFs. Without Word, PDFs fall back to LibreOffice.
 
-1. **Get the kit**
+1. **Get ApplyKit and run setup** (installs the Node and Python packages, plus [gstack](https://github.com/garrytan/gstack) for browsing and applying, which keeps itself updated). gstack also needs [Bun](https://bun.sh).
    ```
    git clone https://github.com/mohithkanala/applykit.git
    cd applykit
-   npm install
-   pip install python-docx docx2pdf pypdf
+   ./setup.sh                                                # macOS, Linux, Git Bash
+   powershell -ExecutionPolicy Bypass -File .\setup.ps1     # Windows PowerShell
    ```
-2. **Install gstack** (browser and helper skills). It installs into your Claude Code skills folder and updates itself. You also need [Bun](https://bun.sh); on Windows, run this in Git Bash.
-   ```
-   git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup
-   ```
-3. **Start Claude Code in the kit folder** (`claude`) and say hello. It walks you through setup:
+2. **Start Claude Code in the kit folder** (`claude`) and say hello. It walks you through setup:
    - **Your base resume:** upload your current resume (PDF or Word), paste it, or build one from scratch together. Claude turns it into `general-resume/cv-data.json` and builds your master `Master_Resume.docx` and `.pdf`. Check every fact.
    - **Your profile:** target roles, location, salary range, deal-breakers.
    - **Portals and tracker** for scanning jobs.
-4. **Run your first build:** `/jd` followed by a pasted job description.
+3. **Run your first build:** `/jd` followed by a pasted job description.
 
 ## Your data stays private
 
