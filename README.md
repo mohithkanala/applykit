@@ -2,13 +2,17 @@
 
 An AI job-search command center that runs inside [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Paste a job description and get a tailored resume (DOCX + identical PDF), a cover letter, an independent recruiter-style score, and an email draft, all built only from facts in your own resume.
 
-## Quick start: let Claude Code set it up
+## Get started
 
-Paste this into Claude Code (any folder):
+You need [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and [Git](https://git-scm.com). In a terminal:
 
-> Set up ApplyKit for me: clone https://github.com/mohithkanala/applykit into my home folder, then run its setup script (setup.ps1 on Windows, setup.sh on Mac/Linux). If anything is missing (Node, Python, Bun, Git), tell me what to install. When it's done, tell me the exact command to start Claude Code in that folder.
+```
+git clone https://github.com/mohithkanala/applykit
+cd applykit
+claude
+```
 
-Then quit Claude, start it inside the folder (`cd ~/applykit && claude`) and say hello. It asks for your resume. ApplyKit's onboarding, `/jd` and the recruiter-validator only load when Claude starts inside the `applykit` folder.
+Say **hi**. Claude installs everything, asks for your resume (upload a PDF or Word file, or build one together), and sets up your profile. Then paste any job description with `/jd`.
 
 ## What you get
 
@@ -24,22 +28,9 @@ Then quit Claude, start it inside the folder (`cd ~/applykit && claude`) and say
 - **Applying on the web** with gstack's `/browse`: it reads job posts, checks they're live, and fills forms, then stops before Submit so you review.
 - **Gmail drafts with attachments** (optional): drafts only; nothing is sent until you approve.
 
-## Setup (about 15 minutes)
+## Manual setup (optional)
 
-You need: [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [Git](https://git-scm.com), [Node.js](https://nodejs.org) 18+, [Python](https://www.python.org) 3.10+, and Microsoft Word (Windows or Mac) for pixel-identical PDFs. Without Word, PDFs fall back to LibreOffice.
-
-1. **Get ApplyKit and run setup** (installs the Node and Python packages, plus [gstack](https://github.com/garrytan/gstack) for browsing and applying, which keeps itself updated). gstack also needs [Bun](https://bun.sh).
-   ```
-   git clone https://github.com/mohithkanala/applykit.git
-   cd applykit
-   ./setup.sh                                                # macOS, Linux, Git Bash
-   powershell -ExecutionPolicy Bypass -File .\setup.ps1     # Windows PowerShell
-   ```
-2. **Start Claude Code in the kit folder** (`claude`) and say hello. It walks you through setup:
-   - **Your base resume:** upload your current resume (PDF or Word), paste it, or build one from scratch together. Claude turns it into `general-resume/cv-data.json` and builds your master `Master_Resume.docx` and `.pdf`. Check every fact.
-   - **Your profile:** target roles, location, salary range, deal-breakers.
-   - **Portals and tracker** for scanning jobs.
-3. **Run your first build:** `/jd` followed by a pasted job description.
+Claude runs this for you on first start. To run it yourself: `./setup.sh` (macOS, Linux, Git Bash) or `powershell -ExecutionPolicy Bypass -File setup.ps1` (Windows). It installs the Node and Python packages and [gstack](https://github.com/garrytan/gstack), which needs [Bun](https://bun.sh). For PDFs identical to the DOCX, have Microsoft Word installed (otherwise LibreOffice is used).
 
 ## Your data stays private
 

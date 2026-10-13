@@ -102,7 +102,11 @@ When using the [Gemini CLI](https://github.com/google-gemini/gemini-cli), the fo
 
 ### First Run — Onboarding (IMPORTANT)
 
-**Before doing ANYTHING else, check if the system is set up.** Run these checks silently every time a session starts:
+**Before doing ANYTHING else, check if the system is set up.**
+
+**Step 0: install.** If `node_modules/` doesn't exist, say "Setting up ApplyKit, this takes a few minutes" and run the setup script yourself: `powershell -ExecutionPolicy Bypass -File setup.ps1` on Windows, `./setup.sh` on macOS/Linux. If it reports something missing (Git, Node, Python 3.10+, Bun), tell the user exactly what to install with the download link, wait, then re-run it. Then continue below.
+
+Run these checks silently every time a session starts:
 
 1. Does `general-resume/cv-data.json` exist?
 2. Does `config/profile.yml` exist (not just profile.example.yml)?
