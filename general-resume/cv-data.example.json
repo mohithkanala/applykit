@@ -1,0 +1,62 @@
+{
+  "candidate": {
+    "name": "Jane Doe",
+    "phone": "(555) 010-0000",
+    "email": "jane.doe@example.com",
+    "linkedinUrl": "https://www.linkedin.com/in/janedoe/",
+    "linkedinDisplay": "linkedin.com/in/janedoe",
+    "portfolioUrl": "https://github.com/janedoe",
+    "portfolioDisplay": "github.com/janedoe",
+    "location": "Austin, TX"
+  },
+  "tagline": "Software Engineer • Data Platforms • Applied ML",
+  "summary": "Software engineer with **5 years** building data platforms and ML services in production. Strong in Python, SQL, and cloud infrastructure, with a track record of cutting pipeline cost and latency.",
+  "competencies": [],
+  "skills": [
+    {"category": "Languages", "items": "Python, SQL, TypeScript"},
+    {"category": "Cloud & Data", "items": "AWS (Lambda, S3, Glue), Postgres, Kafka, Docker"},
+    {"category": "Machine Learning", "items": "scikit-learn, XGBoost, model monitoring"}
+  ],
+  "experience": [
+    {
+      "company": "Example Corp",
+      "period": "Jan 2023 - Present",
+      "role": "Software Engineer",
+      "location": "Austin, TX",
+      "projects": [
+        {
+          "title": "Streaming Analytics Platform",
+          "subRole": "",
+          "stack": "Python, Kafka, Postgres, AWS Lambda",
+          "bullets": [
+            "Built a **streaming ingestion pipeline** processing 2M events per day with exactly-once delivery.",
+            "Cut dashboard query latency by 40% by adding materialized views and partitioning."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Sample Labs",
+      "period": "Jun 2021 - Dec 2022",
+      "role": "Data Engineer",
+      "location": "Remote",
+      "projects": [
+        {
+          "title": "ETL Modernization",
+          "subRole": "",
+          "stack": "Python, Airflow, AWS Glue",
+          "bullets": [
+            "Migrated nightly ETL jobs to an **event-driven design**, reducing compute cost by 25%."
+          ]
+        }
+      ]
+    }
+  ],
+  "education": [
+    {"title": "B.S. Computer Science, State University", "year": "2017 - 2021", "desc": "Coursework in algorithms, databases, and machine learning."}
+  ],
+  "certifications": [
+    {"title": "AWS Certified Cloud Practitioner", "year": "2023", "url": ""}
+  ],
+  "extracurriculars": []
+}

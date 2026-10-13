@@ -1,0 +1,39 @@
+{
+  "name": "career-ops-kit",
+  "version": "1.0.0",
+  "description": "AI-powered job search pipeline built on Claude Code",
+  "scripts": {
+    "doctor": "node scripts/system/doctor.mjs",
+    "verify": "node scripts/tracker/verify-pipeline.mjs",
+    "normalize": "node scripts/tracker/normalize-statuses.mjs",
+    "dedup": "node scripts/tracker/dedup-tracker.mjs",
+    "merge": "node scripts/tracker/merge-tracker.mjs",
+    "pdf": "node scripts/cv/generate-pdf.mjs",
+    "sync-check": "node scripts/pipeline/cv-sync-check.mjs",
+    "liveness": "node scripts/pipeline/check-liveness.mjs",
+    "scan": "node scripts/pipeline/scan.mjs",
+    "gemini:eval": "node scripts/system/gemini-eval.mjs",
+    "test": "node scripts/system/test-all.mjs"
+  },
+  "keywords": [
+    "ai",
+    "job-search",
+    "claude-code",
+    "career",
+    "automation"
+  ],
+  "author": "Mohith Kanala",
+  "homepage": "https://github.com/mohithkanala/career-ops-kit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mohithkanala/career-ops-kit"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "docx": "^9.6.1",
+    "dotenv": "^16.4.5",
+    "js-yaml": "^4.1.1",
+    "playwright": "^1.58.1"
+  }
+}

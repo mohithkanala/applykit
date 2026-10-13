@@ -1,0 +1,51 @@
+# Your personal data stays local by default, so a public fork never leaks it.
+# Want your data versioned? Use a PRIVATE repo and delete the lines you need.
+general-resume/cv-data.json
+general-resume/Master_Resume.*
+cv.md
+article-digest.md
+STATE.md
+config/profile.yml
+config/validator-rules.md
+config/leak-patterns.txt
+config/candidate-form-details.md
+modes/_profile.md
+portals.yml
+data/*
+!data/.gitkeep
+applications/
+reports/
+interview-prep/
+jds/*
+!jds/.gitkeep
+documents/
+output/
+
+# Batch runtime
+batch/logs/*
+!batch/logs/.gitkeep
+batch/batch-state.tsv
+batch/batch-input.tsv
+batch/batch-runner.pid
+batch/tracker-additions/**/*.tsv
+!batch/tracker-additions/.gitkeep
+
+# Secrets and local settings
+.env
+.secrets/
+*.pem
+*.key
+.claude/settings.local.json
+.claude/memory/
+.gstack/
+.playwright-mcp/
+
+# Tooling
+node_modules/
+bun.lock
+package-lock.json
+__pycache__/
+career-dashboard
+.DS_Store
+*.lnk
+~$*.docx
