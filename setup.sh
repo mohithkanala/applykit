@@ -7,8 +7,11 @@ cd "$(dirname "$0")"
 need() { command -v "$1" >/dev/null 2>&1 || { echo "Missing $1. Install it first: $2"; exit 1; }; }
 need git  "https://git-scm.com"
 need node "https://nodejs.org (v18+)"
-PY=$(command -v python3 || command -v python || true)
-[ -n "$PY" ] || { echo "Missing Python. Install it first: https://www.python.org (3.10+)"; exit 1; }
+PY=""
+for c in python3 python py; do
+  if command -v "$c" >/dev/null 2>&1 && "$c" -c "import sys; assert sys.version_info >= (3, 10)" >/dev/null 2>&1; then PY="$c"; break; fi
+done
+[ -n "$PY" ] || { echo "Missing Python 3.10+. Install it first: https://www.python.org"; exit 1; }
 
 echo "1/3 Node packages"
 npm install --silent
