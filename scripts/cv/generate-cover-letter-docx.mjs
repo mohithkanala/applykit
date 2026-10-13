@@ -6,6 +6,7 @@
 import { readFileSync } from 'node:fs';
 import { writeFile } from 'node:fs/promises';
 import {
+  AlignmentType,
   Document, Packer, Paragraph, TextRun, BorderStyle, ExternalHyperlink,
 } from 'docx';
 
@@ -18,7 +19,7 @@ if (!inPath || !outPath) {
 const md = readFileSync(inPath, 'utf-8');
 const lines = md.split(/\r?\n/);
 
-const NAVY = '1a1a2e';
+const NAVY = '1F3864'; // matches the resume template
 const GRAY = '333333';
 const LIGHT_GRAY = '666666';
 
@@ -66,8 +67,9 @@ for (let i = 0; i < lines.length; i++) {
 
   if (line.startsWith('# ')) {
     children.push(new Paragraph({
-      spacing: { before: 0, after: 80 },
-      children: [new TextRun({ text: line.slice(2), bold: true, size: 36, color: NAVY })],
+      alignment: AlignmentType.CENTER,
+      spacing: { before: 0, after: 60 },
+      children: [new TextRun({ text: line.slice(2).toUpperCase(), bold: true, size: 36, color: NAVY })],
     }));
     continue;
   }
@@ -94,9 +96,10 @@ for (let i = 0; i < lines.length; i++) {
   }
 
   // Header lines (before ---) styled smaller and lighter
-  const base = inHeader ? { size: 20, color: LIGHT_GRAY } : { size: 22, color: GRAY };
+  const base = inHeader ? { size: 20, color: '000000' } : { size: 22, color: GRAY };
 
   children.push(new Paragraph({
+    alignment: inHeader ? AlignmentType.CENTER : undefined,
     spacing: { before: 0, after: inHeader ? 30 : 100 },
     children: parseInline(line, base),
   }));
