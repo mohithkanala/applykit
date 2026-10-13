@@ -1,4 +1,4 @@
-# Career-Ops Kit -- AI Job Search Pipeline
+# ApplyKit -- AI Job Search Pipeline
 
 > **Session start:** read **STATE.md** if it exists (live pipeline snapshot: applied, interviewing, pending, next action). Keep it current.
 > **Build pipeline:** see **WORKFLOW.md** (single source of truth for tailoring a resume + cover letter + validator). Use the /jd command for one-shot builds.

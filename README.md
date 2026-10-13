@@ -1,4 +1,4 @@
-# Career-Ops Kit
+# ApplyKit
 
 An AI job-search command center that runs inside [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Paste a job description and get a tailored resume (DOCX + identical PDF), a cover letter, an independent recruiter-style score, and an email draft, all built only from facts in your own resume.
 
@@ -22,8 +22,8 @@ You need: [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [Git](h
 
 1. **Get the kit**
    ```
-   git clone https://github.com/mohithkanala/career-ops-kit.git
-   cd career-ops-kit
+   git clone https://github.com/mohithkanala/applykit.git
+   cd applykit
    npm install
    pip install python-docx docx2pdf pypdf
    ```

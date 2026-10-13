@@ -1,5 +1,5 @@
 {
-  "name": "career-ops-kit",
+  "name": "applykit",
   "version": "1.0.0",
   "description": "AI-powered job search pipeline built on Claude Code",
   "scripts": {
@@ -23,10 +23,10 @@
     "automation"
   ],
   "author": "Mohith Kanala",
-  "homepage": "https://github.com/mohithkanala/career-ops-kit",
+  "homepage": "https://github.com/mohithkanala/applykit",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mohithkanala/career-ops-kit"
+    "url": "https://github.com/mohithkanala/applykit"
   },
   "license": "MIT",
   "dependencies": {
