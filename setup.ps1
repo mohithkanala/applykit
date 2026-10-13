@@ -17,6 +17,7 @@ Write-Host "2/3 Python packages"
 python -m pip install --quiet python-docx docx2pdf pypdf
 
 Write-Host "3/3 gstack"
+if ($env:SKIP_GSTACK) { Write-Host "skipped (SKIP_GSTACK set)" } else {
 $gstack = Join-Path $HOME ".claude\skills\gstack"
 if (-not (Test-Path $gstack)) {
     git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git $gstack
@@ -27,6 +28,7 @@ if ($bash -and $bun) {
     & bash -c "cd ~/.claude/skills/gstack && ./setup"
 } else {
     Write-Host "gstack needs Git Bash and Bun (https://bun.sh) to finish. Install them, then in Git Bash run: cd ~/.claude/skills/gstack && ./setup"
+}
 }
 
 Write-Host ""

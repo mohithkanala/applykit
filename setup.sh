@@ -17,6 +17,7 @@ echo "2/3 Python packages"
 "$PY" -m pip install --quiet python-docx docx2pdf pypdf
 
 echo "3/3 gstack"
+if [ -n "$SKIP_GSTACK" ]; then echo "skipped (SKIP_GSTACK set)"; else
 GSTACK="$HOME/.claude/skills/gstack"
 if [ ! -d "$GSTACK" ]; then
   git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git "$GSTACK"
@@ -25,6 +26,7 @@ if command -v bun >/dev/null 2>&1; then
   (cd "$GSTACK" && ./setup)
 else
   echo "gstack needs Bun to finish setup. Install it (https://bun.sh), then run: cd $GSTACK && ./setup"
+fi
 fi
 
 echo
