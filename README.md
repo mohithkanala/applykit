@@ -2,6 +2,14 @@
 
 An AI job-search command center that runs inside [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Paste a job description and get a tailored resume (DOCX + identical PDF), a cover letter, an independent recruiter-style score, and an email draft, all built only from facts in your own resume.
 
+## Quick start: let Claude Code set it up
+
+Paste this into Claude Code (any folder):
+
+> Set up ApplyKit for me: clone https://github.com/mohithkanala/applykit into my home folder, then run its setup script (setup.ps1 on Windows, setup.sh on Mac/Linux). If anything is missing (Node, Python, Bun, Git), tell me what to install. When it's done, tell me the exact command to start Claude Code in that folder.
+
+Then quit Claude, start it inside the folder (`cd ~/applykit && claude`) and say hello. It asks for your resume. ApplyKit's onboarding, `/jd` and the recruiter-validator only load when Claude starts inside the `applykit` folder.
+
 ## What you get
 
 - **`/jd`**: paste one or more job descriptions (text or URLs). For each one you get:
